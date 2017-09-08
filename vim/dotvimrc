@@ -1,0 +1,278 @@
+set nocompatible              " required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+"-----------------Vundle 插件管理器配置-------------------------
+" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
+Plugin 'altercation/vim-colors-solarized' "solarized 主题
+Plugin 'tomasr/molokai' "molokai : A port of the monokai scheme for TextMate 
+Plugin 'vim-scripts/phd' "phd : Color theme with dark blue background for coding 
+Plugin 'vim-airline/vim-airline' "A lite vim powerline
+Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'octol/vim-cpp-enhanced-highlight' " Improved C++ syntax highlight 
+Plugin 'nathanaelkane/vim-indent-guides' "A plugin for visually displaying indent levels in Vim. 
+"Plugin 'derekwyatt/vim-fswitch' "Vim plug for switching between companion source files 
+"Plugin 'kshenoy/vim-signature' "Plugin to toggle, display and navigate marks
+"Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
+"Plugin 'majutsushi/tagbar'
+"Plugin 'vim-scripts/indexer.tar.gz'
+"Plugin 'vim-scripts/DfrankUtil'
+"Plugin 'vim-scripts/vimprj'
+Plugin 'dyng/ctrlsf.vim' " combine ack search contents under whole project
+"Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'scrooloose/nerdcommenter'
+"Plugin 'vim-scripts/DrawIt'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+"Plugin 'derekwyatt/vim-protodef'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'fholgado/minibufexpl.vim'
+"Plugin 'gcmt/wildfire.vim'
+"Plugin 'sjl/gundo.vim'
+"Plugin 'Lokaltog/vim-easymotion'
+"Plugin 'suan/vim-instant-markdown'
+"Plugin 'lilydjwg/fcitx.vim'
+"Plugin 'lervag/vimtex' " use vim to edit latex
+"Plugin 'vim-latex/vim-latex' "use vim to edit latex
+"Plugin 'vim-scripts/tex.vim'
+Plugin 'tmhedberg/SimpylFold' "No-BS Python code folding for Vim
+Plugin 'Valloric/YouCompleteMe' "A code-completion engine for Vim
+Plugin 'Raimondi/delimitMate' "provides insert mode auto-completion for quotes, parens, brackets, etc.
+Plugin 'Chiel92/vim-autoformat' "Provide easy code formatting in Vim
+Plugin 'scrooloose/nerdcommenter' "Vim plugin for intensely orgasmic commenting
+Plugin 'scrooloose/nerdtree' "A tree explorer plugin for vim 
+Plugin 'lervag/vimtex' "A modern vim plugin for editing LaTeX files.
+Plugin 'CodeFalling/fcitx-vim-osx' "Modified fcitx.vim for osx
+
+"Markdown plugins
+Plugin 'tamlok/vim-markdown' "Markdown highlight 
+Plugin 'iamcco/mathjax-support-for-mkdp' "Mathjax support for Markdown
+Plugin 'iamcco/markdown-preview.vim' "Markdown preview
+Plugin 'joker1007/vim-markdown-quote-syntax' "Markdown code syntax"
+
+Plugin 'richq/vim-cmake-completion' "Cmake completion
+Plugin 'ervandew/supertab' "Supertab bound plugin.
+
+"Plugin 'kien/ctrlp.vim' "Fuzzy file, buffer, mru, tag, etc finder. http://kien.github.com/ctrlp.vim
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
+
+"Plugin that create vim session
+Plugin 'tpope/vim-obsession'
+" All of your Plugins must be added before the following line
+"-----------------------------------------------------
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+"-------------------一般配置-----------------------
+" 让配置变更立即生效
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
+" 开启实时搜索功能
+set incsearch
+" 搜索时大小写不敏感
+set ignorecase
+" 关闭兼容模式
+set nocompatible
+" vim 自身命令行模式智能补全
+set wildmenu
+
+" 修复 backspace 键
+set backspace=2
+
+" 配色方案
+set background=dark
+"colorscheme solarized
+colorscheme molokai
+"colorscheme phd
+
+" 禁止光标闪烁
+set gcr=a:block-blinkon0
+" 禁止显示滚动条
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+" 禁止显示菜单和工具条
+set guioptions-=m
+set guioptions-=T
+
+" 总是显示状态栏
+set laststatus=2
+" 显示光标当前位置
+set ruler
+" 开启行号显示
+set number
+" 高亮显示当前行/列
+set cursorline
+set cursorcolumn
+" 高亮显示搜索结果
+set hlsearch
+syntax on "语法高亮
+" 关于缩进
+filetype indent on " 自适应不同语言的智能缩进
+
+" 关于代码折叠
+"set foldmethod=indent
+set foldmethod=syntax
+set foldlevel=99
+let fortran_fold=1 " add fold feature for fortran file
+au BufWinLeave * silent mkview  " 保存文件的折叠状态
+au BufRead * silent loadview    " 恢复文件的折叠状态
+nnoremap <space> za             " 用空格来切换折叠状态
+
+" 将制表符扩展为空格
+set expandtab
+" 设置编辑时制表符占用空格数
+set tabstop=4
+" 设置格式化时制表符占用空格数
+set shiftwidth=4
+"让 vim 把连续数量的空格视为一个制表符
+set softtabstop=4
+
+" spell check setting
+" set insert mode spell check
+autocmd InsertEnter * setlocal spell
+autocmd InsertLeave * setlocal nospell
+" reset the spell check highlight 
+hi clear SpellBad
+hi SpellBad cterm=bold,italic ctermfg=red
+" 同时检查英文和中文
+set spelllang=en,cjk
+
+" 使用系统剪切板
+set clipboard=unnamed
+
+" 启用对于不同文件类型加载不同配置文件
+filetype plugin on
+" 定义Leader键为';'
+let mapleader=";"
+
+"--------------各种插件配置-------------------
+
+" indent guides configuration
+" 随 vim 自启动
+let g:indent_guides_enable_on_vim_startup=1
+" 从第二层开始可视化显示缩进
+let g:indent_guides_start_level=2
+" 色块宽度
+let g:indent_guides_guide_size=1
+" 快捷键 i 开/关缩进可视化
+:nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+
+" air-line configuration
+set t_Co=256
+let g:airline_theme="simple" 
+let g:airline_powerline_fonts = 1
+" 开启tabline
+let g:airline#extensions#tabline#enabled = 1
+" tabline中当前buffer两端的分隔字符
+let g:airline#extensions#tabline#left_sep = ' ' 
+" tabline中未激活buffer两端的分隔字符
+let g:airline#extensions#tabline#left_alt_sep = '|' 
+"tabline中buffer显示编号
+let g:airline#extensions#tabline#buffer_nr_show = 1
+" 映射切换 buffer 的键位, 在 buffer 没有保存的情况下强制切换
+nnoremap [b :bp!<CR>
+nnoremap ]b :bn!<CR>
+
+" SimplyFold config
+let g:SimpylFold_docstring_preview = 1
+
+" NERDTree config
+map <C-n> :NERDTreeToggle<CR>
+
+" vimtex config
+let g:tex_flavor = 'latex'
+
+" Markdown config
+" Highlight
+let g:markdown_enable_insert_mode_mappings = 0
+" Preview
+let g:mkdp_path_to_chrome = "open -a Safari"
+let g:mkdp_auto_close=0
+nmap <F7> <Plug>MarkdownPreview
+nmap <F8> <Plug>StopMarkdownPreview
+
+" Cmake completion config
+set nocp
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" config for CtrlP
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    \ }
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
+nnoremap <Leader>fu :CtrlPFunky<Cr>
+" narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+let g:ctrlp_funky_syntax_highlight = 1
+let g:ctrlp_extensions = ['funky']
+
+" content search in project
+" search the word under the cursor
+nnoremap <Leader>f :CtrlSF<CR>
+" search the word form input
+nnoremap <Leader>if :CtrlSF<Space>
+let g:ctrlsf_default_root = "project+fw"
+let g:ctrlsf_default_view_mode = 'compact'
+
+"==============personal habits=================
+"QuicklyRun
+map <F5> :call CompileRunGcc()<CR>
+    func! CompileRunGcc()
+        exec "w"
+        if &filetype == 'c'
+            "%< means that the present file name exclude postfix
+            exec "!g++ % -o %<"
+            exec "!time ./%<"
+        elseif &filetype == 'cpp'
+            exec "!g++ % -o %<"
+            exec "!time ./%<"
+        elseif &filetype == 'fortran'
+            exec "!gfortran % -o %<"
+            exec "!./%<"
+        elseif &filetype == 'java'
+            exec "!javac %"
+            exec "!time java %<"
+        elseif &filetype == 'sh'
+            :!time bash %
+        elseif &filetype == 'python'
+            exec "!time python3 %"
+        elseif &filetype == 'html'
+            exec "!firefox % &"
+        elseif &filetype == 'go'
+            exec "!time go run %"
+        endif
+    endfunc
+map <F6> :call RunAlpspython() <CR>
+    func! RunAlpspython()
+        exec "w"
+        if &filetype == 'python'
+            exec "!time alpspython %"
+        endif
+    endfunc
