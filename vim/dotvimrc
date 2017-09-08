@@ -20,30 +20,9 @@ Plugin 'vim-airline/vim-airline' "A lite vim powerline
 Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'octol/vim-cpp-enhanced-highlight' " Improved C++ syntax highlight 
 Plugin 'nathanaelkane/vim-indent-guides' "A plugin for visually displaying indent levels in Vim. 
-"Plugin 'derekwyatt/vim-fswitch' "Vim plug for switching between companion source files 
-"Plugin 'kshenoy/vim-signature' "Plugin to toggle, display and navigate marks
-"Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
-"Plugin 'majutsushi/tagbar'
-"Plugin 'vim-scripts/indexer.tar.gz'
-"Plugin 'vim-scripts/DfrankUtil'
-"Plugin 'vim-scripts/vimprj'
 Plugin 'dyng/ctrlsf.vim' " combine ack search contents under whole project
-"Plugin 'terryma/vim-multiple-cursors'
-"Plugin 'scrooloose/nerdcommenter'
-"Plugin 'vim-scripts/DrawIt'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-"Plugin 'derekwyatt/vim-protodef'
-"Plugin 'scrooloose/nerdtree'
-"Plugin 'fholgado/minibufexpl.vim'
-"Plugin 'gcmt/wildfire.vim'
-"Plugin 'sjl/gundo.vim'
-"Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'suan/vim-instant-markdown'
-"Plugin 'lilydjwg/fcitx.vim'
-"Plugin 'lervag/vimtex' " use vim to edit latex
-"Plugin 'vim-latex/vim-latex' "use vim to edit latex
-"Plugin 'vim-scripts/tex.vim'
 Plugin 'tmhedberg/SimpylFold' "No-BS Python code folding for Vim
 Plugin 'Valloric/YouCompleteMe' "A code-completion engine for Vim
 Plugin 'Raimondi/delimitMate' "provides insert mode auto-completion for quotes, parens, brackets, etc.
@@ -122,8 +101,8 @@ syntax on "语法高亮
 filetype indent on " 自适应不同语言的智能缩进
 
 " 关于代码折叠
-"set foldmethod=indent
-set foldmethod=syntax
+set foldmethod=indent
+"set foldmethod=syntax
 set foldlevel=99
 let fortran_fold=1 " add fold feature for fortran file
 au BufWinLeave * silent mkview  " 保存文件的折叠状态
