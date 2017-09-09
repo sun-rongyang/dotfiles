@@ -101,8 +101,8 @@ syntax on "语法高亮
 filetype indent on " 自适应不同语言的智能缩进
 
 " 关于代码折叠
-set foldmethod=indent
-"set foldmethod=syntax
+"set foldmethod=indent
+set foldmethod=syntax
 set foldlevel=99
 let fortran_fold=1 " add fold feature for fortran file
 au BufWinLeave * silent mkview  " 保存文件的折叠状态
