@@ -1,3 +1,7 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                           MAIN VIM CONFIGURATION                           "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Vundle configuration
 set nocompatible              " required
 filetype off                  " required
 
@@ -11,11 +15,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-"-----------------Vundle 插件管理器配置-------------------------
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 
 "" Interface
-Plugin 'altercation/vim-colors-solarized' "solarized 主题
+Plugin 'altercation/vim-colors-solarized' "solarized scheme
 Plugin 'tomasr/molokai' "molokai : A port of the monokai scheme for TextMate 
 Plugin 'vim-scripts/phd' "phd : Color theme with dark blue background for coding 
 Plugin 'vim-airline/vim-airline' "A lite vim powerline
@@ -40,22 +43,23 @@ Plugin 'derekwyatt/vim-fswitch' "Vim plug for switching between companion source
 Plugin 'majutsushi/tagbar' "Vim plugin that displays tags in a window, ordered by scope
 Plugin 'vim-scripts/indexer.tar.gz' "indexing all files in project with ctags
 Plugin 'vim-scripts/DfrankUtil' "Just a library that indexer dependant
-Plugin 'vim-scripts/vimprj' "Plugin for managing options for different projects
+Plugin 'vim-scripts/vimprj' "Plugin for managing options for different projects that inderxer plugin dependent
+Plugin 'vim-scripts/DrawIt' "Ascii drawing plugin: lines, ellipses, arrows, fills, and more! 
 " Language dependency
 " C/C++
-Plugin 'octol/vim-cpp-enhanced-highlight' " Improved C++ syntax highlight 
+Plugin 'octol/vim-cpp-enhanced-highlight' "Improved C++ syntax highlight 
 "Markdown plugins
 Plugin 'tamlok/vim-markdown' "Markdown highlight 
 Plugin 'iamcco/mathjax-support-for-mkdp' "Mathjax support for Markdown
 Plugin 'iamcco/markdown-preview.vim' "Markdown preview
-Plugin 'joker1007/vim-markdown-quote-syntax' "Markdown code syntax"
+Plugin 'joker1007/vim-markdown-quote-syntax' "Markdown code syntax
 "TeX/LaTeX
 Plugin 'lervag/vimtex' "A modern vim plugin for editing LaTeX files.
 "make/cmake
 Plugin 'richq/vim-cmake-completion' "Cmake completion
 
 "" Others
-Plugin 'ervandew/supertab' "Supertab bound plugin.
+"Plugin 'ervandew/supertab' "Supertab bound plugin.
 Plugin 'tpope/vim-obsession' "Plugin that create vim session
 
 " All of your Plugins must be added before the following line
@@ -63,29 +67,30 @@ Plugin 'tpope/vim-obsession' "Plugin that create vim session
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-"-------------------一般配置-----------------------
-" 让配置变更立即生效
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                           GENERAL CONFIGURATION                            "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" About save the configuration file
+" Update configuration after save immediately
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
-" 开启实时搜索功能
+"" About search
+" Search along with type in
 set incsearch
-" 搜索时大小写不敏感
+" Ignore case search
 set ignorecase
-" 关闭兼容模式
+" Close compatible mode
 set nocompatible
-" vim 自身命令行模式智能补全
+" Turn on Ex mode complete feature
 set wildmenu
 
-" 修复 backspace 键
-set backspace=2
-
-" 配色方案
+" About display
+" Color scheme
 set background=dark
 "colorscheme solarized
 colorscheme molokai
 "colorscheme phd
-
-" 禁止光标闪烁
+" Turn off cursor blink
 set gcr=a:block-blinkon0
 " 禁止显示滚动条
 set guioptions-=l
@@ -95,7 +100,6 @@ set guioptions-=R
 " 禁止显示菜单和工具条
 set guioptions-=m
 set guioptions-=T
-
 " 总是显示状态栏
 set laststatus=2
 " 显示光标当前位置
@@ -109,7 +113,14 @@ set cursorcolumn
 set hlsearch
 syntax on "语法高亮
 
-" 关于缩进
+"" About movement
+" Insert mode use <Leader> + hjkl to move 
+"inoremap <Leader>h <C-o>h
+"inoremap <Leader>j <C-o>j
+"inoremap <Leader>k <C-o>k
+"inoremap <Leader>l <C-o>l
+
+"" About indent
 filetype indent on " 自适应不同语言的智能缩进
 " 将制表符扩展为空格
 set expandtab
@@ -119,8 +130,10 @@ set tabstop=4
 set shiftwidth=4
 "让 vim 把连续数量的空格视为一个制表符
 set softtabstop=4
+" 修复 backspace 键
+set backspace=2
 
-" 关于代码折叠
+"" About folding
 "set foldmethod=indent
 set foldmethod=syntax
 set foldlevel=99
@@ -129,7 +142,7 @@ au BufWinLeave * silent mkview  " 保存文件的折叠状态
 au BufRead * silent loadview    " 恢复文件的折叠状态
 nnoremap <space> za             " 用空格来切换折叠状态
 
-" spell check setting
+"" About spell check
 " set insert mode spell check
 autocmd InsertEnter * setlocal spell
 autocmd InsertLeave * setlocal nospell
@@ -139,13 +152,15 @@ hi SpellBad cterm=bold,italic ctermfg=red
 " 同时检查英文和中文
 set spelllang=en,cjk
 
-" 使用系统剪切板
-set clipboard=unnamed
-
-" 启用对于不同文件类型加载不同配置文件
-filetype plugin on
-" 定义Leader键为';'
+"" About Leader key
+" Define the Leader key
 let mapleader=";"
+
+"" Others configuration
+" Use system's clipboard
+set clipboard=unnamed
+" Load different configuration file for different file type
+filetype plugin on
 
 "--------------各种插件配置-------------------
 
@@ -197,14 +212,14 @@ nmap <F8> <Plug>StopMarkdownPreview
 set nocp
 
 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+"let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+"let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+"let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsExpandTrigger = "<leader><tab>"
+let g:UltiSnipsJumpForwardTrigger = "<leader><tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<leader><s-tab>"
 
 " config for CtrlP
 let g:ctrlp_custom_ignore = {
@@ -224,10 +239,10 @@ let g:ctrlp_funky_syntax_highlight = 1
 let g:ctrlp_extensions = ['funky']
 
 " content search in project
-" search the word under the cursor
-nnoremap <Leader>f :CtrlSF<CR>
-" search the word form input
-nnoremap <Leader>if :CtrlSF<Space>
+" search the word under the cursor. Reminder: search in project
+nnoremap <Leader>sp :CtrlSF<CR>
+" search the word form input. Reminder: search input
+nnoremap <Leader>si :CtrlSF<Space>
 let g:ctrlsf_default_root = "project+fw"
 let g:ctrlsf_default_view_mode = 'compact'
 
