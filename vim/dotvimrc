@@ -57,6 +57,8 @@ Plugin 'joker1007/vim-markdown-quote-syntax' "Markdown code syntax
 Plugin 'lervag/vimtex' "A modern vim plugin for editing LaTeX files.
 "make/cmake
 Plugin 'richq/vim-cmake-completion' "Cmake completion
+"xml
+"Plugin 'othree/xml.vim' "helps editing xml (and [x]html, sgml, xslt) files
 
 "" Others
 "Plugin 'ervandew/supertab' "Supertab bound plugin.
@@ -141,6 +143,10 @@ let fortran_fold=1 " add fold feature for fortran file
 au BufWinLeave * silent mkview  " 保存文件的折叠状态
 au BufRead * silent loadview    " 恢复文件的折叠状态
 nnoremap <space> za             " 用空格来切换折叠状态
+"augroup XML
+    "autocmd!
+    "autocmd FileType xml setlocal foldmethod=indent foldlevelstart=999 foldminlines=0
+"augroup END
 
 "" About spell check
 " set insert mode spell check
