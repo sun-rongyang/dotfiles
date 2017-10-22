@@ -16,6 +16,7 @@ export W=~/Projects/TEBD/
 alias cdw="cd $W"
 alias s="sbatch"
 alias t="todo"
+alias l="ls"
 
 # bind some configurations at .inputrc
 # Tab completion ignore case 
