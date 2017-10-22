@@ -1,0 +1,35 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+
+# Add work PATH
+export W=~/Projects/TEBD/
+# Aliases
+alias cdw="cd $W"
+alias s="sbatch"
+alias t="todo"
+
+# bind some configurations at .inputrc
+# Tab completion ignore case 
+bind "set completion-ignore-case on"
+
+# Click just one Teb for completion
+bind "set show-all-if-ambiguous on"
+
+# History search for Up and Down keys
+bind '"\e[A": history-search-backward' 
+bind '"\e[B": history-search-forward'
+
+# Set vi mode
+set -o vi
+
+# Set autocd
+shopt -s autocd
