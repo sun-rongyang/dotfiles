@@ -12,19 +12,21 @@ fi
 
 # Add work PATH
 export W=~/Projects/TEBD/
+
 # Aliases
+# general
 alias cdw="cd $W"
-alias s="sbatch"
 alias t="todo"
 alias l="ls"
+# about slurm
+alias s="sbatch --mail-user=sun-rongyang@outlook.com --mail-type=END"
+alias ssjb="scontrol show job" #show slurm job info
 
 # bind some configurations at .inputrc
 # Tab completion ignore case 
 bind "set completion-ignore-case on"
-
 # Click just one Teb for completion
 bind "set show-all-if-ambiguous on"
-
 # History search for Up and Down keys
 bind '"\e[A": history-search-backward' 
 bind '"\e[B": history-search-forward'
