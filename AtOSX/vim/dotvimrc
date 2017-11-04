@@ -310,6 +310,9 @@ let g:tagbar_type_cpp = {
 " 默认 --fields=+iaS 不满足 YCM 要求，需改为 --fields=+iaSl
 let g:indexer_ctagsCommandLineOptions="--c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v --fields=+iaSl --extra=+q"
 
+" YCM configuration
+let g:ycm_python_binary_path = '/usr/local/bin/python3'
+
 "==============personal habits=================
 "QuicklyRun
 map <F5> :call CompileRunGcc()<CR>
