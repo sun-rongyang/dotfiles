@@ -100,3 +100,5 @@ source /opt/alps/bin/alpsvars.sh #set alps variables
 alias ctags="`brew --prefix`/bin/ctags" #use brew installed ctags
 alias cdw="cd $WORKPATH" #go to WORKPATH
 alias t="todo" #show todo list
+# git aliases
+alias gla="git log --all --oneline --graph" #show git log all
