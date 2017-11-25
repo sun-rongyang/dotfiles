@@ -1,7 +1,15 @@
-snippet c "XML comment" b
+snippet c "XML comment" w
 <!-- ${1:comments} -->$0
 endsnippet
 
 snippet te "Empty element" w
-<${1:tag} ${2:attribute}="${3:value}"/>$0
+<${1:tag} ${2:attribute}="${3:value}"$4/>$0
+endsnippet
+
+snippet ti "Inline tag" w
+<${1:tag}>${2:content}</${1/([\w:._-]+).*/$1/}>
+endsnippet
+
+snippet tle "Lattice edge" b
+<EDGE><SOURCE vertex="$1"/><TARGET vertex="$2"/></EDGE>$0
 endsnippet

@@ -54,7 +54,7 @@ Plugin 'iamcco/mathjax-support-for-mkdp' "Mathjax support for Markdown
 Plugin 'iamcco/markdown-preview.vim' "Markdown preview
 Plugin 'joker1007/vim-markdown-quote-syntax' "Markdown code syntax
 "TeX/LaTeX
-Plugin 'lervag/vimtex' "A modern vim plugin for editing LaTeX files.
+"Plugin 'lervag/vimtex' "A modern vim plugin for editing LaTeX files.
 "make/cmake
 Plugin 'richq/vim-cmake-completion' "Cmake completion
 "xml
@@ -203,7 +203,8 @@ let g:SimpylFold_docstring_preview = 1
 map <C-n> :NERDTreeToggle<CR>
 
 " vimtex config
-let g:tex_flavor = 'latex'
+"let g:vimtex_enabled = 0
+"let g:tex_flavor = 'latex'
 
 " Markdown config
 " Highlight
@@ -311,8 +312,10 @@ let g:tagbar_type_cpp = {
 let g:indexer_ctagsCommandLineOptions="--c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v --fields=+iaSl --extra=+q"
 
 " YCM configuration
-let g:ycm_python_binary_path = '/usr/local/bin/python3'
+"let g:ycm_python_binary_path = '/usr/local/bin/python3'
 
+"" Special configurations for different file type
+" For xml
 "==============personal habits=================
 "QuicklyRun
 map <F5> :call CompileRunGcc()<CR>
