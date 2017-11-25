@@ -1,2 +1,10 @@
-" Set default font for macVim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                       MACVIM/GVIM CONFIGURATION FILE                       "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Update configuration after save immediately
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+" Set default parameters
+" set default font 
 set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h18
+" set default window size, maximize mvim/gvim window
+set lines=999 columns=999 

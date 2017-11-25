@@ -152,10 +152,14 @@ nnoremap <space> za             " 用空格来切换折叠状态
 " set insert mode spell check
 autocmd InsertEnter * setlocal spell
 autocmd InsertLeave * setlocal nospell
-" reset the spell check highlight 
-hi clear SpellBad
-hi SpellBad cterm=bold,italic ctermfg=red
-" 同时检查英文和中文
+" reset the spell check highlight, only for console mode
+if has("gui_running")
+" do nothing, pass
+else
+    hi clear SpellBad
+    hi SpellBad cterm=bold,italic ctermfg=red
+endif
+" check either English or Chinese/Japanese/Korean
 set spelllang=en,cjk
 
 "" About Leader key
