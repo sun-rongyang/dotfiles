@@ -1,0 +1,25 @@
+## Ultisnips snipets for all filetype
+
+########################
+#  SOURCE CODE HEADER  #
+########################
+global !p
+## Import related packages
+from vimsnippets import get_comment_format #get comment format
+
+## Define some functions
+endglobal
+
+snippet header "Source code header" b
+`!p snip.rv = get_comment_format()[0]`
+`!p snip.rv = get_comment_format()[1]` Author: Rongyang Sun <sun-rongyang@outlook.com>
+`!p snip.rv = get_comment_format()[1]` Date: `!v strftime("%Y-%m-%d %H:%M")`
+`!p snip.rv = get_comment_format()[1]` Last Modified Date: `!v strftime("%Y-%m-%d %H:%M")`
+`!p snip.rv = get_comment_format()[1]` Last Modified By: Rongyang Sun <sun-rongyang@outlook.com>
+`!p snip.rv = get_comment_format()[1]` 
+`!p snip.rv = get_comment_format()[1]` Description: ${1: File description}
+`!p snip.rv = get_comment_format()[2]`
+
+
+${0}
+endsnippet
