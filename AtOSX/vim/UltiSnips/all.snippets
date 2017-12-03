@@ -17,9 +17,8 @@ snippet header "Source code header" b
 `!p snip.rv = get_comment_format()[1]` Last Modified Date: `!v strftime("%Y-%m-%d %H:%M")`
 `!p snip.rv = get_comment_format()[1]` Last Modified By: Rongyang Sun <sun-rongyang@outlook.com>
 `!p snip.rv = get_comment_format()[1]` 
-`!p snip.rv = get_comment_format()[1]` Description: ${1: File description}
+`!p snip.rv = get_comment_format()[1]` Description: ${1:${VISUAL:File description}}
 `!p snip.rv = get_comment_format()[2]`
-
 
 ${0}
 endsnippet
