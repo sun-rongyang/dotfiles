@@ -1,7 +1,7 @@
 ## Python snippets for Ultisnips
 
 snippet docs "Add a docstrings" b
-"""${1:docstrings}"""$0
+"""${1:${VISUAL:docstrings}}"""$0
 endsnippet
 
 snippet cc "Comment with two sharps" b
@@ -16,4 +16,16 @@ endsnippet
 
 snippet lc "Online comment" i
 #${1:python online comment}$0
+endsnippet
+
+snippet #!3 "doc header for python3 source code file" b
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+$0
+endsnippet
+
+snippet #!2 "doc header for python source code file" b
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+$0
 endsnippet

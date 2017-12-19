@@ -100,6 +100,7 @@ source /opt/alps/bin/alpsvars.sh #set alps variables
 alias ctags="`brew --prefix`/bin/ctags" #use brew installed ctags
 alias cdw="cd $WORKPATH" #go to WORKPATH
 alias t="todo" #show todo list
+alias scpp="scp -P 6279" #a special port
 # git aliases
 alias gla="git log --all --oneline --graph" #show git log all
 alias gc-m="git commit -m" #short command for git commit
