@@ -9,12 +9,10 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-
 # Define PS1 variable
 export PS1="[\[\e[35m\]\u@\[\e[33m\]\h:\w\[\e[m\]]\[\e[32m\]\$\[\e[m\] "
 # Add work PATH
 export W=~/Projects/TEBD/
-
 # Aliases
 # general
 alias cdw="cd $W"
@@ -23,6 +21,14 @@ alias l="ls"
 # about slurm
 alias s="sbatch --mail-user=sun-rongyang@outlook.com --mail-type=END"
 alias ssjb="scontrol show job" #show slurm job info
+# Functions
+# about slurm
+# scd
+scd(){
+	JOB_ID="$1"
+	sbatchOutFilePath="$(sfind ${JOB_ID})"
+	cd "$(dirname "${sbatchOutFilePath}")"
+}
 
 # bind some configurations at .inputrc
 # Tab completion ignore case 
