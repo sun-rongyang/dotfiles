@@ -18,6 +18,7 @@ export W=~/Projects
 alias cdw="cd $W"
 alias t="todo"
 alias l="ls"
+alias lsg="ls | grep"
 # about slurm
 alias s="sbatch --mail-user=sun-rongyang@outlook.com --mail-type=END"
 alias ssjb="scontrol show job" #show slurm job info
