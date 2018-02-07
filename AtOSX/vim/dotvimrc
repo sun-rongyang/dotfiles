@@ -139,7 +139,6 @@ set backspace=2
 "set foldmethod=indent
 set foldmethod=syntax
 set foldlevel=99
-let fortran_fold=1 " add fold feature for fortran file
 au BufWinLeave * silent mkview  " 保存文件的折叠状态
 au BufRead * silent loadview    " 恢复文件的折叠状态
 nnoremap <space> za             " 用空格来切换折叠状态
