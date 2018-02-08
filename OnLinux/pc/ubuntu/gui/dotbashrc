@@ -122,3 +122,18 @@ fi
 # intel libraries
 . /opt/intel/bin/compilervars.sh intel64
 . /opt/intel/bin/ifortvars.sh intel64
+
+# Bind some configurations at .inputrc
+# Tab completion ignore case 
+bind "set completion-ignore-case on"
+# Click just one Teb for completion
+bind "set show-all-if-ambiguous on"
+# History search for Up and Down keys
+bind '"\e[A": history-search-backward' 
+bind '"\e[B": history-search-forward'
+
+# Set vi mode
+set -o vi
+
+# Set autocd
+shopt -s autocd
