@@ -45,6 +45,7 @@ Plugin 'vim-scripts/indexer.tar.gz' "indexing all files in project with ctags
 Plugin 'vim-scripts/DfrankUtil' "Just a library that indexer dependant
 Plugin 'vim-scripts/vimprj' "Plugin for managing options for different projects that inderxer plugin dependent
 Plugin 'vim-scripts/DrawIt' "Ascii drawing plugin: lines, ellipses, arrows, fills, and more! 
+Plugin 'terryma/vim-multiple-cursors' "True Sublime Text style multiple selections for Vim
 " Language dependency
 " C/C++
 Plugin 'octol/vim-cpp-enhanced-highlight' "Improved C++ syntax highlight 
@@ -327,6 +328,12 @@ let g:ycm_autoclose_preview_window_after_completion=1
 " jump to declaration/definition
 nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+
+" vim-multiple-cursors configuration
+let g:multi_cursor_next_key='<S-n>'
+let g:multi_cursor_prev_key='<S-p>'
+let g:multi_cursor_skip_key='<S-x>'
+let g:multi_cursor_quit_key='<Esc>'
 
 "" personal habits
 " QuicklyRun
