@@ -9,3 +9,5 @@ set shiftwidth=2
 set softtabstop=2
 set smarttab
 set smartcase
+
+let indexer_ctagsCommandLineOptions="--fortran-kinds=+i+L"

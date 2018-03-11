@@ -46,6 +46,7 @@ Plugin 'vim-scripts/DfrankUtil' "Just a library that indexer dependant
 Plugin 'vim-scripts/vimprj' "Plugin for managing options for different projects that inderxer plugin dependent
 Plugin 'vim-scripts/DrawIt' "Ascii drawing plugin: lines, ellipses, arrows, fills, and more! 
 Plugin 'terryma/vim-multiple-cursors' "True Sublime Text style multiple selections for Vim
+Plugin 'kshenoy/vim-signature'
 " Language dependency
 " C/C++
 Plugin 'octol/vim-cpp-enhanced-highlight' "Improved C++ syntax highlight 
@@ -204,7 +205,7 @@ nnoremap ]b :bn!<CR>
 let g:SimpylFold_docstring_preview = 1
 
 " NERDTree config
-map <C-n> :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 
 " vimtex config
 "let g:vimtex_enabled = 0
@@ -221,11 +222,6 @@ nmap <F8> <Plug>StopMarkdownPreview
 
 " Cmake completion config
 set nocp
-
-" make YCM compatible with UltiSnips (using supertab)
-"let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-"let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-"let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<leader><tab>"
@@ -330,9 +326,9 @@ nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 
 " vim-multiple-cursors configuration
-let g:multi_cursor_next_key='<S-n>'
-let g:multi_cursor_prev_key='<S-p>'
-let g:multi_cursor_skip_key='<S-x>'
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 "" personal habits
