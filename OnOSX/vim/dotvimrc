@@ -96,6 +96,10 @@ colorscheme molokai
 "colorscheme phd
 " Turn off cursor blink
 set gcr=a:block-blinkon0
+" turn off wrap
+set nowrap
+" use utf-8
+set encoding=utf-8
 " 禁止显示滚动条
 set guioptions-=l
 set guioptions-=L
