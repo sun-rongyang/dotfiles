@@ -316,6 +316,8 @@ let g:tagbar_type_cpp = {
 let g:indexer_ctagsCommandLineOptions="--c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v --fields=+iaSl --extra=+q"
 
 " YCM configuration
+" global configuration file
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 " complete works in comments
 let g:ycm_complete_in_comments=1
 " autoload .ycm_extra_conf.py
