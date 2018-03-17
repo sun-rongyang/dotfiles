@@ -10,7 +10,17 @@ from vimsnippets import get_comment_format #get comment format
 ## Define some functions
 endglobal
 
-snippet header "Source code header" b
+snippet header "Short source code header" b
+`!p snip.rv = get_comment_format()[0]`
+`!p snip.rv = get_comment_format()[1]` Author: Rongyang Sun <sun-rongyang@outlook.com>
+`!p snip.rv = get_comment_format()[1]` Creation Date: `!v strftime("%Y-%m-%d %H:%M")`
+`!p snip.rv = get_comment_format()[1]` 
+`!p snip.rv = get_comment_format()[1]` Description: ${1:${VISUAL:File description}}
+`!p snip.rv = get_comment_format()[2]`
+$0
+endsnippet
+
+snippet hheader "Long source code header" b
 `!p snip.rv = get_comment_format()[0]`
 `!p snip.rv = get_comment_format()[1]` Author: Rongyang Sun <sun-rongyang@outlook.com>
 `!p snip.rv = get_comment_format()[1]` Date: `!v strftime("%Y-%m-%d %H:%M")`
