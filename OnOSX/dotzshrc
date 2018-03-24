@@ -110,3 +110,17 @@ alias gla="git log --all --oneline --graph" #show git log all
 alias gc-m="git commit -m" #short command for git commit
 # python aliases
 alias pylint3="/usr/local/bin/pylint" #use pylint3 to check python3 code
+
+# Define some functions
+# virtual Box
+vmlist () {
+    VBoxManage list $1
+}
+
+vmsetup () {
+    VBoxManage startvm $1 $2 $3
+}
+
+vmshutdown () {
+    VBoxManage controlvm $1 poweroff
+}
