@@ -11,3 +11,4 @@ set smarttab
 set smartcase
 
 let indexer_ctagsCommandLineOptions="--fortran-kinds=+i+L"
+runtime macros/matchit.vim
