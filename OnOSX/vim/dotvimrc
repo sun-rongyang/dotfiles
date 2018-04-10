@@ -47,6 +47,7 @@ Plugin 'vim-scripts/vimprj' "Plugin for managing options for different projects 
 Plugin 'vim-scripts/DrawIt' "Ascii drawing plugin: lines, ellipses, arrows, fills, and more! 
 Plugin 'terryma/vim-multiple-cursors' "True Sublime Text style multiple selections for Vim
 Plugin 'kshenoy/vim-signature'
+Plugin 'rhysd/vim-grammarous' "A powerful grammar checker for Vim using LanguageTool.
 " Language dependency
 " C/C++
 Plugin 'octol/vim-cpp-enhanced-highlight' "Improved C++ syntax highlight 
@@ -336,6 +337,10 @@ let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
+" for vim-grammarous
+let g:grammarous#default_comments_only_filetypes = {
+            \ '*' : 1, 'help' : 0, 'markdown' : 0,
+            \ }
 
 "" personal habits
 " QuicklyRun
