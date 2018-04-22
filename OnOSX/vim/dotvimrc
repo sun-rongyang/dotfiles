@@ -178,6 +178,10 @@ set clipboard=unnamed
 " Load different configuration file for different file type
 filetype plugin on
 
+"" For different filetypes
+" TeX/LaTeX
+let g:tex_flavor='latex'
+
 "--------------各种插件配置-------------------
 
 " indent guides configuration
