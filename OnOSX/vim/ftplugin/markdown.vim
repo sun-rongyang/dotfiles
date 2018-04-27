@@ -1,0 +1,2 @@
+"" Markdown configuration
+setlocal wrap
