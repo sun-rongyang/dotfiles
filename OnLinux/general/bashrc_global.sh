@@ -20,7 +20,7 @@ done
 export PS1="[\[\e[35m\]\u@\[\e[33m\]\h:\w\[\e[m\]]\[\e[32m\]\$\[\e[m\] "
 export PATH=~/.local/bin:$PATH
 source /opt/intel/bin/compilervars.sh -arch intel64
-source /opt/intel/vtune_amplifier_2018/amplxe-vars.sh
+source /opt/intel/vtune_amplifier_2018/amplxe-vars.sh > /dev/null
 
 # Aliases
 alias l="ls -al"
