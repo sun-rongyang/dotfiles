@@ -1,9 +1,16 @@
 ## C snippets for Ultisnips
-
 snippet c "Comment" w
 /* ${1:${VISUAL:comment}} */$0
 endsnippet
 
+
 snippet prag "#pragma" b
 #pragma ${0}
+endsnippet
+
+
+snippet for "for loop (for)" b
+for (${1:int} ${2:i} = ${3:0}; $2 ${4:< count}; ${5:$2++}) {
+	${6}
+}${0}
 endsnippet
