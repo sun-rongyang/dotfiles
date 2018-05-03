@@ -124,3 +124,9 @@ vmsetup () {
 vmshutdown () {
     VBoxManage controlvm $1 poweroff
 }
+
+# OpenMP compiling 
+compcpp () {
+    OUTPUT=$(basename $1 .cpp)
+    g++-7 -fopenmp $1 -o ${OUTPUT}
+}
