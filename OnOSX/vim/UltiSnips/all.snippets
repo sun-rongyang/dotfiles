@@ -1,8 +1,11 @@
-## Ultisnips snipets for all filetype
-
-########################
-#  SOURCE CODE HEADER  #
-########################
+#
+# Author: Rongyang Sun <sun-rongyang@outlook.com>
+# Date: Long long ago
+# Last Modified Date: 2018-05-13 06:38
+# Last Modified By: Rongyang Sun <sun-rongyang@outlook.com>
+# 
+# Description: UltiSnips for all filetype.
+#
 global !p
 ## Import related packages
 from vimsnippets import get_comment_format #get comment format
@@ -10,6 +13,8 @@ from vimsnippets import get_comment_format #get comment format
 ## Define some functions
 endglobal
 
+
+# File header
 snippet header "Short source code header" b
 `!p snip.rv = get_comment_format()[0]`
 `!p snip.rv = get_comment_format()[1]` Author: Rongyang Sun <sun-rongyang@outlook.com>
