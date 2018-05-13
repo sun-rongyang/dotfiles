@@ -6,6 +6,29 @@
 "
 
 
+"" Vundle configuration
+set nocompatible              " required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
+Plugin 'altercation/vim-colors-solarized' "solarized scheme
+Plugin 'tomasr/molokai' "molokai : A port of the monokai scheme for TextMate
+" All of your Plugins must be added before the following line
+"-----------------------------------------------------
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
 set nocompatible
 "" About search
 " Search along with type in
@@ -20,6 +43,7 @@ set wildmenu
 " About display
 " Color scheme
 set background=dark
+colorscheme molokai
 " Turn off cursor blink
 set gcr=a:block-blinkon0
 " turn off wrap
