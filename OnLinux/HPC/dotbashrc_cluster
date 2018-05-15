@@ -9,6 +9,10 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
+# use gcc-7 development tool
+source scl_source enable devtoolset-7
+# add gcc-7 libs path
+export LD_LIBRARY_PATH=/opt/ohpc/pub/compiler/gcc/7.1.0/lib64:$LD_LIBRARY_PATH
 # Define PS1 variable
 export PS1="[\[\e[35m\]\u@\[\e[33m\]\h:\w\[\e[m\]]\[\e[32m\]\$\[\e[m\] "
 # Add work PATH
@@ -17,7 +21,7 @@ export W=~/Projects
 # general
 alias cdw="cd $W"
 alias t="todo"
-alias l="ls"
+alias l="ls -al"
 alias lsg="ls | grep"
 # about slurm
 alias s="sbatch --mail-user=sun-rongyang@outlook.com --mail-type=END"
