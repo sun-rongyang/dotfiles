@@ -1,5 +1,13 @@
-# Global bashrc file
-# Put the file in /etc/profile.d/
+#
+# Author: Rongyang Sun <sun-rongyang@outlook.com>
+# Date: Long long ago
+# Last Modified Date: 2018-05-16 23:46
+# Last Modified By: Rongyang Sun <sun-rongyang@outlook.com>
+# 
+# Description: Global bashrc file. Put the file in /etc/profile.d/
+#
+
+
 # bind some configurations at .inputrc
 # Tab completion ignore case
 bind "set completion-ignore-case on"
