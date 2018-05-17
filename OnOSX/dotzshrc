@@ -130,3 +130,8 @@ compcpp () {
     OUTPUT=$(basename $1 .cpp)
     g++-7 -fopenmp $1 -o ${OUTPUT}
 }
+
+# Jupyter notebook
+touchnb () {
+  cp ~/.tmp/Untitled.ipynb $1
+}
