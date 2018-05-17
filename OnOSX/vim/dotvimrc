@@ -149,6 +149,7 @@ set foldlevel=99
 au BufWinLeave * silent mkview  " 保存文件的折叠状态
 au BufRead * silent loadview    " 恢复文件的折叠状态
 nnoremap <space> za             " 用空格来切换折叠状态
+noremap <leader><space> zM     " fold all level
 "augroup XML
     "autocmd!
     "autocmd FileType xml setlocal foldmethod=indent foldlevelstart=999 foldminlines=0
