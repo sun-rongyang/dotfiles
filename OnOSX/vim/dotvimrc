@@ -1,6 +1,13 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                           MAIN VIM CONFIGURATION                           "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" Author: Rongyang Sun <sun-rongyang@outlook.com>
+" Date: Long long ago
+" Last Modified Date: 2018-05-19 09:09
+" Last Modified By: Rongyang Sun <sun-rongyang@outlook.com>
+" 
+" Description: Main vim configuration file for GUI environment.
+"
+
+
 "" Vundle configuration
 set nocompatible              " required
 filetype off                  " required
