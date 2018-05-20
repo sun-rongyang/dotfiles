@@ -86,6 +86,10 @@ filetype plugin indent on    " required
 " Update configuration after save immediately
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
+"" About Leader key
+" Define the Leader key
+let mapleader=";"
+
 "" About search
 " Search along with type in
 set incsearch
@@ -175,10 +179,6 @@ else
 endif
 " check either English or Chinese/Japanese/Korean
 set spelllang=en,cjk
-
-"" About Leader key
-" Define the Leader key
-let mapleader=";"
 
 "" Others configuration
 " Use system's clipboard
