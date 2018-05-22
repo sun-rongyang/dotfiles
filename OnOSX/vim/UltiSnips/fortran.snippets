@@ -16,3 +16,15 @@ endsnippet
 snippet omp "!$omp" b
 !$omp $0
 endsnippet
+
+
+snippet def "#define" b
+#define ${1:MACRO}$0
+endsnippet
+
+
+snippet ifdef "#ifdef" b
+#ifdef ${1:VAR}
+	$2
+#endif$0
+endsnippet
