@@ -29,11 +29,21 @@ alias ssjb="scontrol show job" #show slurm job info
 # Functions
 # about slurm
 # scd
+# usage: scd JOB_ID
 scd(){
 	JOB_ID="$1"
 	sbatchOutFilePath="$(sfind ${JOB_ID})"
 	cd "$(dirname "${sbatchOutFilePath}")"
 }
+
+
+# sssh
+# usage: sssh NODE
+sssh(){
+  NODE="$1"
+  ssh ${USER}@${NODE}
+}
+
 
 # bind some configurations at .inputrc
 # Tab completion ignore case 
