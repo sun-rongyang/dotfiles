@@ -100,6 +100,8 @@ source $ZSH/oh-my-zsh.sh
 # Add to PATH
 export PATH="/usr/local/opt/llvm/bin:$PATH" #clang PATH
 export PATH="/opt/alps/bin:$PATH" #alps PATH 
+# Add to DYLD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH="/opt/hpc/lib"
 # Add workpath
 export WORKPATH="/Users/thorough/Thorough/physics/Projects"
 
