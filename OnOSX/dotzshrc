@@ -104,6 +104,9 @@ export PATH="/opt/alps/bin:$PATH" #alps PATH
 export DYLD_LIBRARY_PATH="/opt/hpc/lib"
 # Add workpath
 export WORKPATH="/Users/thorough/Thorough/physics/Projects"
+# pFUnit path
+export PFUNIT="/opt/pfunit"
+export F90_VENDOR="GNU"
 
 # Execute some scripts
 # set alps variables
