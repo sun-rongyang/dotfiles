@@ -389,3 +389,6 @@ map <F6> :call RunAlpspython() <CR>
             exec "!time alpspython %"
         endif
     endfunc
+
+" Map syntax for special extensions
+autocmd BufNewFile,BufRead *.pf set syntax=fortran    " pFUnit Fortran unittest
