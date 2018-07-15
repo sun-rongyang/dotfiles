@@ -38,6 +38,3 @@ shopt -s autocd
 
 # Set vi mode
 set -o vi
-
-# use gcc-7 development tool
-source scl_source enable devtoolset-7
