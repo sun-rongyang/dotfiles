@@ -44,6 +44,7 @@ set wildmenu
 " Color scheme
 set background=dark
 colorscheme molokai
+set t_ut=   " For fix background color erase for 256-color tmux
 " Turn off cursor blink
 set gcr=a:block-blinkon0
 " turn off wrap
