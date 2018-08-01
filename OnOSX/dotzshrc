@@ -105,8 +105,8 @@ export DYLD_LIBRARY_PATH="/opt/hpc/lib"
 # Add workpath
 export WORKPATH="/Users/thorough/Thorough/physics/Projects"
 # pFUnit path
-export PFUNIT="/opt/pfunit"
-export F90_VENDOR="GNU"
+export PFUNIT="/opt/pfunit-intel"
+export F90_VENDOR="Intel"
 
 # Execute some scripts
 # set alps variables
