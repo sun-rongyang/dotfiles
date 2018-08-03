@@ -96,24 +96,27 @@ source $ZSH/oh-my-zsh.sh
 # alias vim=“/usr/local/bin/vim”
 
 ## Custom configurations
-# About special paths
-# Add to PATH
-export PATH="/usr/local/opt/llvm/bin:$PATH" #clang PATH
-export PATH="/opt/alps/bin:$PATH" #alps PATH 
-# Add to DYLD_LIBRARY_PATH
-export DYLD_LIBRARY_PATH="/opt/hpc/lib"
-# Add workpath
-export WORKPATH="/Users/thorough/Thorough/physics/Projects"
-# pFUnit path
-export PFUNIT="/opt/pfunit-intel"
-export F90_VENDOR="Intel"
-
 # Execute some scripts
 # set alps variables
 source /opt/alps/bin/alpsvars.sh 
 # set intel variables
 source /opt/intel/compilers_and_libraries/mac/bin/compilervars.sh intel64
 source /opt/intel/mkl/bin/mklvars.sh intel64
+
+# About special paths
+# Add to PATH
+export PATH="/usr/local/opt/llvm/bin:$PATH" #clang PATH
+export PATH="/opt/alps/bin:$PATH" #alps PATH 
+# Add to DYLD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH="/opt/hpc/lib:$DYLD_LIBRARY_PATH"
+# Add workpath
+export WORKPATH="/Users/thorough/Thorough/physics/Projects"
+# pFUnit path
+export PFUNIT="/opt/pfunit-intel"
+export F90_VENDOR="Intel"
+# json-fortran PATH
+export CPATH="/opt/jsonfortran-intel-6.9.0/lib:$CPATH"
+export DYLD_LIBRARY_PATH="/opt/jsonfortran-intel-6.9.0/lib:$DYLD_LIBRARY_PATH"
 
 # Define some aliases
 alias ctags="`brew --prefix`/bin/ctags" #use brew installed ctags
