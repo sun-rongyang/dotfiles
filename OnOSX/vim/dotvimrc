@@ -69,6 +69,8 @@ Plugin 'joker1007/vim-markdown-quote-syntax' "Markdown code syntax
 Plugin 'richq/vim-cmake-completion' "Cmake completion
 "xml
 "Plugin 'othree/xml.vim' "helps editing xml (and [x]html, sgml, xslt) files
+" Lisp
+Plugin 'l04m33/vlime', {'rtp': 'vim/'}
 
 "" Others
 "Plugin 'ervandew/supertab' "Supertab bound plugin.
@@ -390,5 +392,5 @@ map <F6> :call RunAlpspython() <CR>
         endif
     endfunc
 
-" Map syntax for special extensions
-autocmd BufNewFile,BufRead *.pf set syntax=fortran    " pFUnit Fortran unittest
+" Map special extension to a filetype
+autocmd BufNewFile,BufRead *.pf set filetype=fortran    " pFUnit Fortran unittest
