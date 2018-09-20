@@ -134,6 +134,8 @@ set cursorcolumn
 " 高亮显示搜索结果
 set hlsearch
 syntax on "语法高亮
+" Highlight the 80th column 
+set colorcolumn=80
 
 "" About movement
 " Insert mode use <Leader> + hjkl to move 
