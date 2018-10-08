@@ -64,7 +64,8 @@ Plugin 'iamcco/mathjax-support-for-mkdp' "Mathjax support for Markdown
 Plugin 'iamcco/markdown-preview.vim' "Markdown preview
 Plugin 'joker1007/vim-markdown-quote-syntax' "Markdown code syntax
 "TeX/LaTeX
-"Plugin 'lervag/vimtex' "A modern vim plugin for editing LaTeX files.
+Plugin 'lervag/vimtex' "A modern vim plugin for editing LaTeX files.
+"Plugin 'vim-latex/vim-latex' "Enhanced LaTeX support for Vim.
 "make/cmake
 Plugin 'richq/vim-cmake-completion' "Cmake completion
 "xml
@@ -384,6 +385,8 @@ map <F5> :call CompileRunGcc()<CR>
             exec "!firefox % &"
         elseif &filetype == 'go'
             exec "!time go run %"
+        elseif &filetype == 'tex'
+            exec "make"
         endif
     endfunc
 map <F6> :call RunAlpspython() <CR>
