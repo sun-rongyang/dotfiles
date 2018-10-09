@@ -131,6 +131,8 @@ alias gc-m="git commit -m" #short command for git commit
 alias pylint3="/usr/local/bin/pylint" #use pylint3 to check python3 code
 # tmux support utf-8
 alias tmux="tmux -u"
+# Clean Python runtime temporary files
+alias pyclean="find . -name '*.pyc' -delete && find . -type d -name '__pycache__' -delete"
 
 # Define some functions
 # virtual Box
