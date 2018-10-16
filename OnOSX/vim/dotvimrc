@@ -369,7 +369,7 @@ map <F5> :call CompileRunGcc()<CR>
             exec "!g++ % -o %<"
             exec "!time ./%<"
         elseif &filetype == 'cpp'
-            exec "!g++ % -o %<"
+            exec "!g++-7 % -o %<"
             exec "!time ./%<"
         elseif &filetype == 'fortran'
             exec "!gfortran % -o %<"
