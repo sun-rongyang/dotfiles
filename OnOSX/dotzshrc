@@ -134,6 +134,10 @@ alias pylint3="/usr/local/bin/pylint" #use pylint3 to check python3 code
 alias tmux="tmux -u"
 # Clean Python runtime temporary files
 alias pyclean="find . -name '*.pyc' -delete && find . -type d -name '__pycache__' -delete"
+# Rename `rm' command
+alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
+alias del="rmtrash"
+alias trash="rmtrash"
 
 # Define some functions
 # virtual Box
