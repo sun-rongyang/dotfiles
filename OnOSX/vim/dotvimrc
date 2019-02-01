@@ -349,6 +349,8 @@ let g:ycm_autoclose_preview_window_after_completion=1
 nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gt :YcmCompleter GoTo<CR>
+" FixIt
+nnoremap <leader>fi :YcmCompleter FixIt<CR>
 
 " vim-multiple-cursors configuration
 let g:multi_cursor_next_key='<C-n>'
